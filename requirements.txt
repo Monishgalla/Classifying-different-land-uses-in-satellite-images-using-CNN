@@ -1,8 +1,8 @@
 fastapi
 uvicorn 
 pydantic
-pickle
+cloudpickle
 scikit-learn
 numpy==1.21.0
-tensorflow
+tensorflow==2.6.0
 flask
