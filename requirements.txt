@@ -3,5 +3,6 @@ uvicorn
 pydantic
 cloudpickle
 scikit-learn
-numpy==1.19.5
+numpy==1.19.3
+tensorflow-cpu
 flask
