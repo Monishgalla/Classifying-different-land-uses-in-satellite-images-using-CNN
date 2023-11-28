@@ -4,5 +4,4 @@ pydantic
 cloudpickle
 scikit-learn
 numpy==1.19.5
-tensorflow-cpu
 flask
