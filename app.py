@@ -50,7 +50,7 @@ def predict():
 
         # Get class names from your dataset
         class_names = [
-
+    
     'agricultural1', 'airplane1', 'baseballdiamond1', 'beach1', 'buildings1',
     'chaparral1', 'denseresidential1', 'forest1', 'freeway1', 'golfcourse1',
     'harbor1', 'intersection1', 'mediumresidential1', 'mobilehomepark1',
