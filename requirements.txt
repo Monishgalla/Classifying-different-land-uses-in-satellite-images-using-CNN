@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 fastapi
 uvicorn 
 pydantic
@@ -6,3 +7,15 @@ scikit-learn
 numpy
 tensorflow
 flask
+=======
+fastapi==0.68.0
+uvicorn==0.15.0
+pydantic==1.9.0
+cloudpickle==2.0.0
+scikit-learn==0.24.2
+numpy==1.19.3
+tensorflow-cpu==2.6.0
+flask==2.0.1
+pip==21.3
+setuptools==58.2.0
+>>>>>>> dc58cd94e1aad1bfe32bcdb186c1a276c3588305
