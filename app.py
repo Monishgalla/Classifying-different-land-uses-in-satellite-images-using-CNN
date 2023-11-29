@@ -11,6 +11,8 @@ from tensorflow.keras.preprocessing import image
 import numpy as np
 from PIL import Image 
 import os
+from werkzeug.urls import url_quote_plus
+
 
 app = Flask(__name__)
 
