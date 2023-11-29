@@ -9,3 +9,4 @@ flask==2.0.1
 pip==21.3
 setuptools==58.2.0
 cython
+Pillow==8.4.0
