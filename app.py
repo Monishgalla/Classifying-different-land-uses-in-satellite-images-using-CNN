@@ -3,6 +3,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
 from PIL import Image  # Import the Image module from PIL
+import os
 
 app = Flask(__name__)
 
@@ -50,4 +51,6 @@ def predict():
         return render_template('error.html', error=str(e))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Use the PORT environment variable provided by Heroku or default to 5000
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
