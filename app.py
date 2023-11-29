@@ -68,15 +68,13 @@ def predict():
         return render_template('error.html', error=str(e))
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description="Satellite IMage Classification: AM")
+    parser.add_argument("-d", "--debug", action="store_true", default=False,
+                        help="Enable debug mode")
+    parser.add_argument("-b", "--bind", default="127.0.0.1", type=str)
+    parser.add_argument("-p", "--port", default="8080", type=int)
+    args = parser.parse_args()
 
-    app.run(debug=True)
-    
-
-    # Use the PORT environment variable provided by Heroku or default to 5000
-    port = int(os.environ.get("PORT", 8000))
-    
-    if __name__ == '__main__':
-    app.run(port=port)
-    
-
+    app.debug = args.debug
+    app.run(host=args.bind, port=args.port)
 
