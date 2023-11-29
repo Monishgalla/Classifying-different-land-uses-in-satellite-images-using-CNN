@@ -10,7 +10,7 @@ import numpy as np
 app = Flask(__name__)
 
 # Load the trained ResNet50 model
-model = load_model('model.sav')  # Update with the actual path to your saved model
+model = load_model('model.h5')  # Update with the actual path to your saved model
 
 @app.route('/')
 def home():
