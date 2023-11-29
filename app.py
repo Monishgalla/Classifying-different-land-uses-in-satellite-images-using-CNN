@@ -59,13 +59,7 @@ def predict():
 ]
   # Update with your actual class names
 
-            'agricultural1', 'airplane1', 'baseballdiamond1', 'beach1', 'buildings1',
-            'chaparral1', 'denseresidential1', 'forest1', 'freeway1', 'golfcourse1',
-            'harbor1', 'intersection1', 'mediumresidential1', 'mobilehomepark1',
-            'overpass1', 'parkinglot1', 'river1', 'runway1', 'sparseresidential1',
-            'storagetanks1', 'tenniscourt1'
-        ]
-     
+        
         result = {'class': class_names[predicted_class], 'confidence': float(predictions[0][predicted_class])}
 
         return render_template('result.html', result=result)
