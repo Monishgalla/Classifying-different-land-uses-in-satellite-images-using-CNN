@@ -4,13 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Satellite Image Classification</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        label {
+            margin-bottom: 8px;
+        }
+        input[type="file"] {
+            margin-bottom: 16px;
+        }
+        button {
+            background-color: #fffff;
+            color: black;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049
+        }
+        footer {
+            margin-top: 300px;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
     <h1>Satellite Image Classification</h1>
+    <p>Welcome to the Satellite Image Classification application. Upload an image below, and we'll predict its category.</p>
     <form action="/predict" method="post" enctype="multipart/form-data">
         <label for="image">Upload Image:</label>
         <input type="file" name="image" accept="image/*" required>
         <button type="submit">Predict</button>
     </form>
+    <p>Note: Supported image formats include JPEG, PNG, and GIF.</p>
+    <footer>
+        <p>&copy; 2023 Satellite Image Classification. All rights reserved.</p>
+    </footer>
 </body>
 </html>

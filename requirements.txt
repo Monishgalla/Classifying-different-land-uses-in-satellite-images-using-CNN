@@ -1,18 +1,4 @@
-fastapi==0.68.0
-uvicorn==0.15.0
-pydantic==1.9.0
-cloudpickle==2.0.0
-scikit-learn==1.3.2
-numpy==1.19.3
-tensorflow-cpu==2.5.0
-flask==2.0.1
-pip==21.3
-setuptools==58.2.0
-<<<<<<< HEAD
-=======
-cython==3.0.6
-pillow==8.4.0
-gunicorn==20.1.0
-pandas==1.3.4
-joblib==1.1.1
->>>>>>> 318402298d8898618ea9d0ede72e1e9eb99ea889
+Flask==2.1.0
+numpy==1.21.0
+Pillow==8.2.0
+tensorflow

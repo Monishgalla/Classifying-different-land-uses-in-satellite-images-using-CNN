@@ -1,4 +1,5 @@
 
+
 from flask import Flask, render_template, request, jsonify
 import os
 import pickle
@@ -7,18 +8,21 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
 
+
 from flask import Flask, render_template, request
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
-from PIL import Image  # Import the Image module from PIL
+from PIL import Image 
 import os
+
+from werkzeug.urls import url_quote_plus
 
 
 app = Flask(__name__)
 
-# Load the trained ResNet50 model
-model = load_model('model.h5')  # Update with the actual path to your saved model
+
+model = load_model('trained_model.h5')  
 
 @app.route('/')
 def home():
@@ -54,6 +58,7 @@ def predict():
         # Get class names from your dataset
         class_names = [
 
+
     'agricultural1', 'airplane1', 'baseballdiamond1', 'beach1', 'buildings1',
     'chaparral1', 'denseresidential1', 'forest1', 'freeway1', 'golfcourse1',
     'harbor1', 'intersection1', 'mediumresidential1', 'mobilehomepark1',
@@ -61,9 +66,13 @@ def predict():
     'storagetanks1', 'tenniscourt1'
 ]
 
+
         # Update with your actual class names
 
 
+  # Update with your actual class names
+
+        
         result = {'class': class_names[predicted_class], 'confidence': float(predictions[0][predicted_class])}
 
         return render_template('result.html', result=result)
@@ -72,11 +81,19 @@ def predict():
         return render_template('error.html', error=str(e))
 
 if __name__ == '__main__':
-
-    app.run(debug=True)
-    
-
     # Use the PORT environment variable provided by Heroku or default to 5000
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
+
+    # The following code will not be executed due to the previous app.run() call
+    parser = argparse.ArgumentParser(description="Satellite Image Classification: AM")
+    parser.add_argument("-d", "--debug", action="store_true", default=False,
+                        help="Enable debug mode")
+    parser.add_argument("-b", "--bind", default="127.0.0.1", type=str)
+    parser.add_argument("-p", "--port", default="8080", type=int)
+    args = parser.parse_args()
+
+    app.debug = args.debug
+    app.run(host=args.bind, port=args.port)
+
 
